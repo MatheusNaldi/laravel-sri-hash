@@ -57,7 +57,7 @@ class GenerateSriHashes extends Command
 
                 $filename = '/' . $file->getRelativePathname();
 
-                $hashes[$filename] = $base64Hash;
+                $hashes[$filename] = $algorithm . '-' . $base64Hash;
             }
         }
 
