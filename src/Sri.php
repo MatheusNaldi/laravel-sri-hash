@@ -22,6 +22,22 @@ class Sri
     }
 
     /**
+     * Return the html required for the SRI validation
+     *
+     * @param  string  $path
+     * @param  boolean $useCredentials
+     *
+     * @return string
+     */
+    public function html($path, $useCredentials = false)
+    {
+        $integrity = $this->hash($path);
+        $crossOrigin = $useCredentials ? 'use-credentials' : 'anonymous';
+
+        return "integrity={$integrity} crossorigin={$crossOrigin}";
+    }
+
+    /**
      * Return the SRI hash for the given path
      *
      * @param  string $path
