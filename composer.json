@@ -1,5 +1,5 @@
 {
-    "name": "naldi/laravel-sri",
+    "name": "naldi/laravel-sri-hash",
     "description": "SRI Hash generator for laravel 5.2",
     "keywords": ["sri", "hash generator", "subresource integrity"],
     "license": "MIT",
