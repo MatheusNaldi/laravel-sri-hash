@@ -46,6 +46,10 @@ class Sri
      */
     public function hash($path)
     {
+        if ($this->existsInConfigFile($path)) {
+            return config('laravel-sri.hashes')[$path];
+        }
+
         $json = json_decode(file_get_contents($this->jsonFilePath()));
         $prefixedPath = starts_with($path, '/') ? $path : "/{$path}";
 
@@ -58,6 +62,19 @@ class Sri
 
         return $this->algorithm . '-' . $base64Hash;
     }
+
+    /**
+     * Check if the path exists in the config file
+     *
+     * @param  string $path
+     *
+     * @return boolean
+     */
+    private function existsInConfigFile($path)
+    {
+        return array_key_exists($path, config('laravel-sri.hashes'));
+    }
+
 
     /**
      * Gets the file content on the run

@@ -16,5 +16,9 @@ return [
         'folders' => [
             base_path('public')
         ],
-    ]
+    ],
+
+    'hashes' => [
+
+    ],
 ];
