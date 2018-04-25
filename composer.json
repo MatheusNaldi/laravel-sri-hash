@@ -1,0 +1,21 @@
+{
+    "name": "naldi/laravel-sri",
+    "description": "SRI Hash generator for laravel 5.2",
+    "keywords": ["sri", "hash generator", "subresource integrity"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matheus Naldi",
+            "email": "matheus_naldi@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "illuminate/support": "5.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Naldi\\SubresourceIntegrity\\": "src"
+        }
+    }
+}
