@@ -3,6 +3,7 @@
 namespace Naldi\LaravelSri;
 
 use Illuminate\Support\ServiceProvider;
+use Naldi\LaravelSri\Commands\GenerateSriHashes;
 
 class SriServiceProvider extends ServiceProvider
 {
@@ -18,6 +19,12 @@ class SriServiceProvider extends ServiceProvider
             __DIR__.'/../config/laravel-sri.php',
             'laravel-sri'
         );
+
+        $this->app->bind('command.laravel-sri:generate', GenerateSriHashes::class);
+
+        $this->commands([
+            'command.laravel-sri:generate',
+        ]);
     }
 
     public function boot()
