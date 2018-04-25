@@ -61,7 +61,9 @@ class GenerateSriHashes extends Command
             }
         }
 
-        $this->file->put(config('laravel-sri.sri_hashes_file'), json_encode($hashes));
+        $hashesJson = json_encode($hashes, JSON_UNESCAPED_SLASHES);
+
+        $this->file->put(config('laravel-sri.sri_hashes_file'), $hashesJson);
 
         $this->info('SRI hashes generator finished successfully');
     }
