@@ -1,6 +1,6 @@
 {
     "name": "naldi/laravel-sri-hash",
-    "description": "SRI Hash generator for laravel 5.3",
+    "description": "SRI Hash generator for laravel 5.4",
     "keywords": ["sri", "hash generator", "subresource integrity"],
     "license": "MIT",
     "authors": [
@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "php": ">=5.6.4",
-        "illuminate/support": "5.3.*",
-        "illuminate/console": "5.3.*",
-        "illuminate/filesystem": "5.3.*"
+        "php": ">=7.0",
+        "illuminate/support": "5.4.*",
+        "illuminate/console": "5.4.*",
+        "illuminate/filesystem": "5.4.*"
     },
     "autoload": {
         "psr-4": {
