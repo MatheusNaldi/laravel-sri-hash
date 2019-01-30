@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Naldi\\LaravelSri\\SriServiceProvider",
+                "Naldi\\LaravelSri\\SriServiceProvider"
             ],
             "aliases": {
                 "Sri": "Naldi\\LaravelSri\\SriFacade"
