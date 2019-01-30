@@ -13,7 +13,7 @@
         "php": ">=7.0",
         "illuminate/support": "5.2.x|5.3.x|5.4.x|5.5.x",
         "illuminate/console": "5.2.x|5.3.x|5.4.x|5.5.x",
-        "illuminate/filesystem": "5.2.x|5.3.x|5.4.x|5.5.x",
+        "illuminate/filesystem": "5.2.x|5.3.x|5.4.x|5.5.x"
     },
     "autoload": {
         "psr-4": {
