@@ -2,6 +2,7 @@
 
 namespace Naldi\LaravelSri;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
 class Sri
@@ -51,7 +52,7 @@ class Sri
         }
 
         $json = json_decode(file_get_contents($this->jsonFilePath()));
-        $prefixedPath = starts_with($path, '/') ? $path : "/{$path}";
+        $prefixedPath = Str::startsWith($path, '/') ? $path : "/{$path}";
 
         if (array_key_exists($prefixedPath, $json)) {
             return $json->{$prefixedPath};
@@ -85,10 +86,10 @@ class Sri
      */
     private function getFileContent($path)
     {
-        if (starts_with($path, ['http', 'https', '//'])) {
+        if (Str::startsWith($path, ['http', 'https', '//'])) {
             $fileContent = file_get_contents($path);
         } else {
-            $path = starts_with($path, '/') ? $path : "/{$path}";
+            $path = Str::startsWith($path, '/') ? $path : "/{$path}";
             $path = parse_url($path, PHP_URL_PATH);
 
             $fileContent = file_get_contents(config('laravel-sri.base_path') . $path);
